@@ -1,0 +1,35 @@
+{
+  "name": "all-about-car-and-travel",
+  "version": "1.0.0",
+  "description": "Website which allows users to enjoy travelling and happy moments with Our Services",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praveenNagaraj97-au7/All-About-Car-and-Travel.git"
+  },
+  "author": "Praveen Nagaraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/praveenNagaraj97-au7/All-About-Car-and-Travel/issues"
+  },
+  "homepage": "https://github.com/praveenNagaraj97-au7/All-About-Car-and-Travel#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.16",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "pug": "^3.0.0",
+    "validator": "^13.0.0"
+  }
+}
