@@ -13,11 +13,10 @@ html(lang="en")
                 }
             .jumbotron{
                 background-image : url("https://i.ibb.co/vPJqPNL/Pngtree-creative-construction-sites-and-high-resolution-713771.jpg");
-                backdrop-filter: blur(30px);
             }
     body
         div(class= "jumbotron jumbotron-fluid")
-            form(class="w-25 p-3 container " method='POST'  action='/addstudent')
+            form(class="w-25 p-3 container " method='POST'  action='/signUp')
                 div(class="form-group")
                     label(for="studentName") Name
                     input(type="text" placeholder="Enter Your Name" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp")
