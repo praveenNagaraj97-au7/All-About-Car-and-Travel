@@ -4,7 +4,7 @@ exports.errHandler = (err, req, res, next) => {
   err.stack = err.stack;
   err.name = err.name;
   // let current_page = req.route.path;
-  res.render("error/apperror", {
+  res.status(err.statusCode).json({
     message: err.message,
     name: err.name,
     stack: err.stack,

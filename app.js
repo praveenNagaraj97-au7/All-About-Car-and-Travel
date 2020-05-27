@@ -3,10 +3,6 @@ config({ path: "./config.env" });
 
 import Express from "express";
 import morgan from "morgan";
-import { fetchUrl } from "fetch";
-
-import viewRouter from "./route/viewRouter";
-import userRouter from "./route/userRouter";
 
 import { errHandler } from "./handlers/errorHandler";
 
@@ -18,11 +14,10 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 app.set("view engine", "pug");
 
-app.use(viewRouter);
-app.use(userRouter);
-
 app.all("*", (req, res, next) => {
-  res.render("error/404error", { image });
+  res.status(404).json({
+    message: "page Not Found",
+  });
 });
 
 app.use(errHandler);

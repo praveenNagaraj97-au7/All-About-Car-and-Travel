@@ -5,7 +5,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title= title
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
-        
+        link(href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Pacifico&display=swap" rel="stylesheet")  
         script(src="https://use.fontawesome.com/8d4a5633d7.js")
 
 
@@ -13,23 +13,29 @@ html(lang="en")
             body{
                 background-color : #d8adf0;
             }
+            .navbar{
+                font-family: 'Chelsea Market', cursive;
+                color : grey;
+            }
             
     body
         nav(class="navbar navbar-light" style="background-color: #93b5cc")
             div(class="container-fluid")
                 div(class="navbar-header")
-                    a(class="navbar-brand" href="#")= websiteName
+                    a(class="navbar-brand" href="/")= websiteName
                 
                 ul(class="nav navbar-nav")
-                li(class="active")
-                    a(href="#") Home
-                li
+                li(class="active" style="font-family: 'Pacifico', cursive;")
+                    a(href="#") Blog
+                li(style="font-family: 'Pacifico', cursive;")
                     a(href="#") Rental
-                li
+                li(style="font-family: 'Pacifico', cursive;")
                     a(href="#") Buy Car Accessories
+                li(style="font-family: 'Pacifico', cursive;")
+                    a(href="#") Forum
                     
                 ul(class="nav navbar-nav navbar-right")
-                li(class="fa fa-sign-in" aria-hidden="true")
+                li(class="fa fa-sign-in" aria-hidden="true" )
                     a(href="login") Login
                 li(class="fa fa-user-plus" aria-hidden="true")
                     a(href="signUp") Join Us
