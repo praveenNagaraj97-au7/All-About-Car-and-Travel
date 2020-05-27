@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Error
+        style(type='text/css').
+            body{
+                background-image : url("https://i.ibb.co/87FsXQq/error-1.png");
+                /* Center and scale the image nicely */
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                    }
+            body{
+                text-align : center;
+            }
+    body
+        h1 Something Went Wrong
+        h2 
+            label(for="message") Message : 
+            = message
+        h4 
+            label(for="name") Error Name : 
+            = name
+        h5 
+            label(for="stack") Where : 
+            = stack

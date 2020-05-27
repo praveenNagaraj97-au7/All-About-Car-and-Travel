@@ -1,6 +1,15 @@
 import { catchAsyncError } from "./../utils/catchAsyncError";
 import { AppError } from "../utils/appError";
 
+import { promisify } from "util";
+
+import { sign } from "jsonwebtoken";
+
+const JWTsignInTokenGen = (id) => {
+  return sign({ id }, "dnwuadhnowahfnenanfoaikndbfnaon", {
+    expiresIn: 60 * 1,
+  });
+};
 // Views
 
 exports.view = (templateName, bodyObject) => {
@@ -34,6 +43,8 @@ exports.preFillSignUp = (req, res, next) => {
 };
 
 exports.preFillLogin = (req, res, next) => {
+  if (!req.body.email || !req.body.password)
+    return next(new AppError("Please Enter Email and Password"));
   req.email = req.body.email;
   req.password = req.body.password;
   next();
@@ -55,10 +66,21 @@ exports.login = (model_Name, response) =>
     res.redirect(response);
   });
 
+// User gets Token of his Id As soon as he sign-Up/ registers
+exports.sendSignUpToken = (response) => (req, res, next) => {
+  const token = JWTsignInTokenGen(req.id);
+
+  res.cookie("JWT-Token", token, {
+    maxAge: 60000,
+  });
+  res.redirect(response);
+};
+
 // CRUD (users,shop,rental)
 
-exports.createDocx = (model_Name, response) =>
+exports.createDocx = (model_Name) =>
   catchAsyncError(async (req, res, next) => {
-    await model_Name.create(req.body);
-    res.redirect(response);
+    const docx = await model_Name.create(req.body);
+    req.id = docx._id;
+    next();
   });
