@@ -1,5 +1,4 @@
 import { connect } from "mongoose";
-import { createConnection } from "mysql";
 
 import app from "./app";
 
